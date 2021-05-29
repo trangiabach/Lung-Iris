@@ -40,7 +40,7 @@ def pneumonia_predict(img):
     return prediction
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates/')
 
 UPLOAD_FOLDER = 'static'
 app.secret_key = "secret key"
