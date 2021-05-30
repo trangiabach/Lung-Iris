@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<div class = "github-link"><a href = 'https://github.com/trangiabach/Lung-Iris'>View on github</a></div>
 <div class = "container-fluid">
     <div class = "row lung-iris-intro">
         <div class = "col-12 lung-iris-title" data-aos="fade-up"
@@ -40,6 +41,13 @@
             </form>
         </div>
         <div class = "row" id = "results">
+            <span class = "col-12" id = 'classify-state'></span>
+        </div>
+        <div class = "row" id = "github">
+            <div class = "col-12 upload-title"  data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom">View this project on <span><a href = 'https://github.com/trangiabach/Lung-Iris'>Github</a></span></div>
+            <div class = "col-12 lung-iris-paragraph" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" id = "demo">Know how this was built and how it will be built.</div>
         </div>
     </div>
 </div>
@@ -55,11 +63,11 @@ function browse_file() {
 }
 
 $(document).ready(function (e) {
-    $('.upload-img-form').on('submit',(function(e) {
+    $('.upload-img-form').on('submit',( async function(e) {
         e.preventDefault();
         var formData = new FormData(this);
-
-        $.ajax({
+        document.getElementById('classify-state').innerHTML = 'Classifying'
+        await $.ajax({
             type:'POST',
             url: $(this).attr('action'),
             data:formData,
@@ -71,7 +79,7 @@ $(document).ready(function (e) {
                 console.log(data);
                 for(var i = 0; i < data['list'].length; i++) {
                     console.log(data['list'][i]['prediction'])
-                    document.getElementById("results").innerHTML += "<div class = 'col-6'><div class = 'card'> <img src = '" + data['list'][i]['path'] + "'> <div class = 'prediction-title'>PREDICTION</div> <div class = 'prediction-results'>" + data['list'][i]['prediction'] + "</div> </div> </div>"
+                    document.getElementById("results").innerHTML += "<div class = 'col-12 col-sm-12 col-md-6'><div class = 'card'> <img src = '" + data['list'][i]['path'] + "'> <div class = 'prediction-title'>PREDICTION</div> <div class = 'prediction-results'>" + data['list'][i]['prediction'] + "</div> </div> </div>"
                 }
             },
             error: function(data){
@@ -79,6 +87,8 @@ $(document).ready(function (e) {
                 console.log(data);
             }
         });
+
+        document.getElementById('classify-state').innerHTML = 'Classified'
     }));
 
     $("#files").on("change", function() {
@@ -88,7 +98,7 @@ $(document).ready(function (e) {
 
 document.getElementById('files').addEventListener('change', function(e) {
   var list = document.getElementById('filelist');
-  list.innerHTML = '<span>' + this.files.length + ' files chosen:\n' + '</span>';
+  list.innerHTML = '<span>' + this.files.length + ' new file(s) chosen:\n' + '</span>';
   for (var i = 0; i < this.files.length; i++) {
     list.innerHTML += this.files[i].name + '\n';
   }
@@ -108,6 +118,21 @@ html,body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+.github-link a {
+    font-family: 'Poppins', sans-serif;
+    color: #01c9ea;
+    position: fixed;
+    z-index: 100;
+    font-size: 1.2rem;
+    top: 2rem;
+    right: 2rem;
+    text-decoration: none;
+}
+
+.github-link a:hover {
+    text-decoration: underline;
 }
 
 body::-webkit-scrollbar {
@@ -190,7 +215,7 @@ body::-webkit-scrollbar {
 
 .lung-iris-filelist {
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 7rem;
     font-size: 1.2rem;
     color: #999;
     letter-spacing: 1px;
@@ -198,8 +223,28 @@ body::-webkit-scrollbar {
 }
 
 .lung-iris-filelist span {
+    padding-top: 2rem;
     font-size: 1.6rem;
     color: #01c9ea;
+}
+
+#classify-state {
+    font-size: 1.8rem;
+    color: #01c9ea;
+    padding-bottom: 3rem;
+}
+
+#github {
+    padding-bottom: 20%;
+}
+
+#github a {
+    color: #01c9ea;
+    text-decoration: none;
+}
+
+#github a:hover {
+    text-decoration: underline;
 }
 
 #results {
@@ -234,5 +279,124 @@ body::-webkit-scrollbar {
     font-size: 4rem;
     margin-left: 1rem;
     letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .lung-iris-demo-btn {
+        font-size: 1.5rem;
+    }
+
+    .lung-iris-demo-btn:hover {
+        font-size: 1.8rem;
+    }
+
+    .lung-iris-paragraph {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .lung-iris-demo-btn {
+        font-size: 1.2rem;
+    }
+
+    .lung-iris-demo-btn:hover {
+        font-size: 1.4rem;
+    }
+
+    .lung-iris-paragraph {
+        font-size: 1.4rem;
+    }
+
+    .upload-title {
+        font-size: 2.5rem;
+    }
+
+    .lung-iris-title {
+        font-size: 7rem;
+    }
+}
+
+@media only screen and (max-width: 731px) {
+    .lung-iris-demo-btn {
+        font-size: 1rem;
+    }
+
+    .lung-iris-demo-btn:hover {
+        font-size: 1.2rem;
+    }
+
+    .lung-iris-paragraph {
+        font-size: 1.2rem;
+    }
+
+    .upload-title {
+        font-size: 2rem;
+    }
+
+    .lung-iris-title {
+        font-size: 6.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 630px) {
+    .lung-iris-demo-btn {
+        font-size: 0.8rem;
+        width: 40%;
+        left: 30%;
+    }
+
+    .lung-iris-demo-btn:hover {
+        font-size: 1rem;
+    }
+
+    .lung-iris-paragraph {
+        font-size: 1rem;
+    }
+
+    .upload-title {
+        font-size: 1.7rem;
+    }
+
+    .lung-iris-title {
+        font-size: 6rem;
+    }
+
+    .github-link a {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .lung-iris-demo-btn {
+        font-size: 0.8rem;
+        width: 40%;
+        left: 30%;
+    }
+
+    .lung-iris-demo-btn:hover {
+        font-size: 1rem;
+    }
+
+    .lung-iris-paragraph {
+        font-size: 1rem;
+    }
+
+    .upload-title {
+        font-size: 1.7rem;
+    }
+
+    .lung-iris-title {
+        font-size: 6rem;
+    }
+
+    .github-link a {
+        font-size: 1rem;
+    }
+
+    .lung-iris-demo {
+        padding-bottom: 22%;
+    }
 }
 </style>
