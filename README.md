@@ -2,6 +2,10 @@
 
 <img src = "https://github.com/trangiabach/Lung-Iris/blob/main/viral-pneumonai%20(1).jpg?raw=true">
 
+<br/>
+Prediction: Pneumonia
+
+
 ## Demo
 
 Link: https://lung-iris.herokuapp.com/
