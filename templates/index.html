@@ -79,7 +79,7 @@ $(document).ready(function (e) {
                 console.log(data);
                 for(var i = 0; i < data['list'].length; i++) {
                     console.log(data['list'][i]['prediction'])
-                    document.getElementById("results").innerHTML += "<div class = 'col-12 col-sm-12 col-md-6'><div class = 'card'> <img src = '" + data['list'][i]['path'] + "'> <div class = 'prediction-title'>PREDICTION</div> <div class = 'prediction-results'>" + data['list'][i]['prediction'] + "</div> </div> </div>"
+                    document.getElementById("results").innerHTML += "<div class = 'col-12 col-sm-12 col-md-6'><div class = 'card'> <img src = '" + data['list'][i]['path'] + "'> <div class = 'prediction-title'>PREDICTION</div> <div class = 'prediction-results'>" + data['list'][i]['prediction'] + "</div> <div class = 'percentage'>" + data['list'][i]['normal-percentage'] + "% NORMAL</div> <div  class = 'percentage'>" + data['list'][i]['pneumonia-percentage'] + "% PNEUMONIA</div> </div> </div>"
                 }
             },
             error: function(data){
@@ -279,6 +279,12 @@ body::-webkit-scrollbar {
     font-size: 4rem;
     margin-left: 1rem;
     letter-spacing: 1px;
+}
+
+.percentage {
+    margin-left: 1rem;
+    letter-spacing: 1px;
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 1200px) {
