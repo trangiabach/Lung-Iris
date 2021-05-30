@@ -16,7 +16,7 @@ import cv2
 
 IMG_SIZE = 256
 
-model_path = 'CNN-COVID-verOfficial-83.h5'
+model_path = 'CNN-COVID-verOfficial-98.h5'
 
 model = tf.keras.models.load_model(model_path)
 
@@ -24,7 +24,7 @@ model = tf.keras.models.load_model(model_path)
 def preprocess(image):
   img = cv2.imread(image, 0)
   img = cv2.resize(img, (256,256), interpolation = cv2.INTER_AREA)
-  ret,thresh1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY_INV)
+  ret,thresh1 = cv2.threshold(img,127,255,cv2.THRESH_TOZERO)
   thresh1 = cv2.cvtColor(thresh1, cv2.COLOR_GRAY2RGB) * 255
   thresh1 = np.expand_dims(thresh1, axis=0)
   return thresh1
@@ -37,10 +37,10 @@ def pneumonia_predict(img):
         prediction = 'PNEUMONIA'
     else:
         prediction = 'NORMAL'
-    return prediction
+    return [prediction, str(round(classes[0][0], 2)*100), str(round(1 - classes[0][0], 2)*100), str(classes[0][0])] 
 
 
-app = Flask(__name__, template_folder='templates/')
+app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static'
 app.secret_key = "secret key"
@@ -150,12 +150,16 @@ def submit_file():
                 label = pneumonia_predict(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 img = preprocess(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 model.layers[-1].activation = None
-                heatmap = make_gradcam_heatmap(img, model, 'conv2d_37')
+                print(model.summary())
+                heatmap = make_gradcam_heatmap(img, model, 'conv2d_83')
                 heatmap_img = save_and_display_gradcam(os.path.join(app.config['UPLOAD_FOLDER'], filename),heatmap)
                 heatmap_img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 file_paths.append({
                     'path' : os.path.join(app.config['UPLOAD_FOLDER'], filename),
-                    'prediction': label,
+                    'prediction': label[0],
+                    'pneumonia-percentage': label[1],
+                    'normal-percentage': label[2],
+                    'a': label[3]
                 })
         flash('File(s) successfully uploaded')
     return jsonify({
