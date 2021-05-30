@@ -31,7 +31,7 @@ The web application can detect whether a chest X-ray scan image is pneumonia-pos
 
 ### Dataset
 
-The dataset is synthesized from 3 Kaggle datasets comprising of pneumonia and normal chest X-ray images, consisting of 4048 training data points, 1040 validation data points and 614 testing data points. Types of pneumonia include viral, bacterial and COVID-19 pneumonia. The dataset was then preprocessed and augmented with random flips, zooms, sheers and rotations. An additional thresholding algorithm from OpenCV was also applied to hightlight important features in the chest X-rays.
+The dataset is synthesized from 3 Kaggle datasets comprising of pneumonia and normal chest X-ray images, consisting of more than 18000 training data points, 5000 validation data points and 614 testing data points. Types of pneumonia include viral, bacterial and COVID-19 pneumonia. The dataset was then preprocessed and augmented with random flips, zooms, sheers and rotations. An additional thresholding algorithm from OpenCV was also applied to hightlight important features in the chest X-rays.
 
 ### Model
 
