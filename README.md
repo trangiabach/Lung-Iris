@@ -1,5 +1,6 @@
 # Lung-Iris
 
+<img src = "https://github.com/trangiabach/Lung-Iris/blob/main/viral-pneumonai%20(1).jpg?raw=true">
 
 ## Demo
 
