@@ -35,7 +35,7 @@ The dataset is synthesized from 3 Kaggle datasets comprising of pneumonia and no
 
 ### Model
 
-The model is a convolutional neural network comprising of four convolutinal layers each with max-pooling and two fully-connected layers. We extract the activation map from the last convolutional layer, allowing for the network to have great localizaion ability. The model achieved 96% accuracy on training and validation set and 91% accuracy on testing set.
+The model is a convolutional neural network comprising of four convolutinal layers each with max-pooling and two fully-connected layers. An activation map was extracted from the last convolutional layer, allowing for the network to have great localizaion ability. The model achieved 96% accuracy on training and validation set and 91% accuracy on testing set.
 
 ### Web application
 
@@ -57,7 +57,7 @@ One of the biggest challenge was how to create a small model that can attain gre
 
 ## Accomplishments
 
-The resulting model attained good accuracy and only have around two million paramter and <30MB in size, making it scalable and fast to deploy on servers.
+The resulting model attained good accuracy and only have around two million paramter and <30MB in size, making it less prone to overfitting, scalable and fast to deploy on servers. The model also has great localization abilities (highlight regions of interest) through the use of activation maps extracted from the convolutional layers.
 
 ## Lessons
 
