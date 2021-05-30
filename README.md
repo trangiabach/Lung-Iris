@@ -5,7 +5,7 @@
 
 Link: https://lung-iris.herokuapp.com/
 
-Note: Due to spontaneous natures of Heroku web hosting, there could be delays and slow load time.
+Note: Due to the spontaneous nature of Heroku web hosting, there could be delays and slow load time.
 
 ## Introduction
 
