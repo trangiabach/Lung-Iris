@@ -68,7 +68,8 @@ A great deal was learnt about how to optimize model for best performance and how
 1. Collaborate with researchers and radiologist to collect better data.
 2. Find hospital to test the solutions.
 3. Add bounding box on top of the activation map to further localize suspected areas. A model with multi-labels of more 14 thoracic diseases is also currently being developed from another dataset from VinBigData. With new addition of labels for diseases will mean that radiologists can use the tool for an even more generalized purpose of identifying diseases from chest X-rays. 
-4. Integrate more variables such as age, gender, sex, weight,... to make diagnosis even more detailed.
+4. Integrate more variables such as age, gender, sex, weight,... into the computer vision model to make diagnosis even more detailed.
+5. Integrate hospital specific procedures to be more applicable such as face mask detection and employee/ medical staff face recognition to gain access to the web app.
 
 ## References
 
@@ -83,6 +84,7 @@ https://arxiv.org/pdf/1711.05225.pdf
 
 Localization using bounding box: 
 https://ml4health.github.io/2019/pdf/73_ml4h_preprint.pdf
+
 
 
 
