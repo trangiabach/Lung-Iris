@@ -66,7 +66,7 @@ $(document).ready(function (e) {
     $('.upload-img-form').on('submit',( async function(e) {
         e.preventDefault();
         var formData = new FormData(this);
-        document.getElementById('classify-state').innerHTML = 'Classifying'
+        document.getElementById('classify-state').innerHTML = 'Classifying...'
         await $.ajax({
             type:'POST',
             url: $(this).attr('action'),
@@ -88,7 +88,7 @@ $(document).ready(function (e) {
             }
         });
 
-        document.getElementById('classify-state').innerHTML = 'Classified'
+        document.getElementById('classify-state').innerHTML = 'Classified!'
     }));
 
     $("#files").on("change", function() {
