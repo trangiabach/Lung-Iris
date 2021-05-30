@@ -1,5 +1,12 @@
 # Lung-Iris
 
+
+## Demo
+
+Link: https://lung-iris.herokuapp.com/
+
+Note: Due to spontaneous natures of Heroku web hosting, there could be delays and slow load time.
+
 ## Introduction
 
 Lung Iris is a web application that can automatically detect pneumonia patients from their chest X-ray images. With more than 2 billions procedures for pneumonia diagnosis performed manually by radiologists worldwide, Lung Iris serves as the optimal solution for saving time and cost for the healthcare system. In addition, in view of the COVID-19 pandemic, Lung Iris can help identify critical COVID-19 patients who have developed pneumonia in their lungs, making the diagnosis time much faster for them so that they can receive prompt care. This is particularly effective in situations where the healcare system is overloaded and there is a lack of personnel.
