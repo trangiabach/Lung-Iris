@@ -11,6 +11,8 @@ Prediction: Pneumonia
 Red: region of greater interest in classifying pneumonia
 <br/>
 Blue: region of lower interest in classifying pneumonia
+<br/>
+This is an image of a pneumonia lungs with expert annotations(arrows) of the pneumonia regions. As can be seen, the AI have detected correctly the region of interest(red regions) that have been annotated by the expert.
 
 
 ## Demo
