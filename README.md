@@ -7,6 +7,8 @@ https://user-images.githubusercontent.com/62537937/120206800-d6ff5b00-c255-11eb-
 
 <br/>
 Prediction: Pneumonia
+Red: region of greater interest in classifying pneumonia
+Blue: region of lower interest in classifying pneumonia
 
 
 ## Demo
