@@ -31,7 +31,7 @@ Lung Iris is a web application that can automatically detect pneumonia patients 
 
 Diagnosis from medical imaging is very common and it is estimated that there are around 2 billion procedures performed worldwide. The case is even more evident when in Vietname, most of X-ray scans are for the lungs and heart. Therefore, automating this process will be of great significance.
 
-COVID-19 is still continuing to sprea around the world at alarming rates. What will happen if the healthcare system is overloaded? How will we be able to take off burden from already extremely tired medical staff? And especially, how can we help critical patients in whose situation time is extremely valuable?
+COVID-19 is still continuing to spread around the world at alarming rates. What will happen if the healthcare system is overloaded? How will we be able to take off burden from already extremely tired medical staff? And especially, how can we help critical patients in whose situation time is extremely valuable?
 
 
 A survey by the University of Michigan shows that patients have an average wait time for chest X-ray results from 2-3 days. This number can also be as high as 11 days. However, with AI technology applied, this wait time can be reduced to less than one day.
