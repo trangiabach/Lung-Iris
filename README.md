@@ -1,3 +1,6 @@
+
+https://user-images.githubusercontent.com/62537937/120206800-d6ff5b00-c255-11eb-8074-0297786ebfae.mp4
+
 # Lung-Iris
 
 <img src = "https://github.com/trangiabach/Lung-Iris/blob/main/viral-pneumonai%20(1).jpg?raw=true">
@@ -40,7 +43,7 @@ The dataset is synthesized from 3 Kaggle datasets comprising of pneumonia and no
 
 ### Model
 
-The model is a convolutional neural network comprising of four convolutinal layers each with max-pooling and two fully-connected layers. An activation map was extracted from the last convolutional layer, allowing for the network to have great localizaion ability. The model achieved 96% accuracy on training and validation set and 91% accuracy on testing set.
+The model is a convolutional neural network comprising of four convolutinal layers each with max-pooling and two fully-connected layers. An activation map was extracted from the last convolutional layer, allowing for the network to have great localization ability. The model achieved 96% accuracy on training and validation set and 91% accuracy on testing set.
 
 ### Web application
 
